@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,10 +11,48 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">#}
+{#    <link rel="stylesheet" href="../static/css/style.css">#}
+
     <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            background: #EEEEEE;
+        }
+        #wrap {
+            width: 100%;
+        }
+        nav {
+            width: 100%;
+            height: 45px;
+            background: lightgoldenrodyellow;
+        }
+        .nav_menu {
+            width: 45px;
+            height: 100%;
+            float: left;
+            background: lightgreen;
+        }
+        .nav_viewmode {
+            width: 45px;
+            height: 100%;
+            float: right;
+            background: lightblue;
+        }
+        .list_body {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
+    <div id="wrap">
+        <nav>
+            <div class="nav_menu">Menu</div>
+            <div class="nav_viewmode">View Mode</div>
+        </nav>
         {% block body %}{% endblock %}
     </div>
 
