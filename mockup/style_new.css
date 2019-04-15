@@ -1,0 +1,164 @@
+#wrap {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* * * * * * * HEADER * * * * * * */
+
+header {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 9999;
+}
+
+.go_back_btn {
+    width: 40px; height: 40px;
+    margin: 20px 0 0 20px;
+    float: left;
+    background: url('img/go-back-left-arrow.png') no-repeat center / cover;
+}
+
+.save_btn, .edit_btn {
+    width: 40px; height: 40px;
+    margin: 20px 20px 0 0;
+    float: right;
+    background: url('img/edit.png') no-repeat center / cover;
+}
+
+.save_btn {
+    background-image: url('img/checked.png');
+}
+
+
+
+/* * * * * * * MAIN SECTION * * * * * * */
+section {
+    width: 100%;
+    height: calc(100vh - 160px);
+    overflow: hidden;
+    margin: 80px 0;
+    /* background: pink; */
+    padding: 10px 20px 0;
+}
+
+.input_title {
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+.input_plain_text {
+    border: none;
+    box-shadow: none;
+    margin: 0 5px;
+}
+textarea {
+    height: 500px;
+}
+
+.memo_title {
+    margin: 0 5px 10px;
+}
+.memo_plain_text {
+    width: 100%;
+    margin: 0 5px;
+    height: calc(100vh - 220px);
+    overflow: auto;
+}
+
+
+/* * * * * * * LABEL, STT SELECT BOX * * * * * * */
+.select_box {
+    width: calc(100% - 10px);
+    height: 250px;
+    background: #EEEEEE;
+    border-radius: 5px;
+    position: absolute;
+    left: 5px;
+    bottom: 90px;
+}
+@media screen and (min-width: 921px){
+    .select_box {
+        width: 910px;
+    }
+}
+.label_select_box, .stt_box {
+    display: none;
+}
+.label_select_box:after, .stt_box:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 120px;
+    width: 0; height: 0;
+    border-right: 25px solid transparent;
+    border-top: 20px solid #EEEEEE;
+    border-left: 25px solid transparent;
+}
+.stt_box:after {
+    left: 175px;
+}
+.label_select_box > ul {
+    padding: 0 20px;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.label_select_box > ul > li {
+    height: calc(100% / 5);
+    line-height: 50px;
+    /* background: pink; */
+    border-radius: 25px 10px 10px 25px;
+    padding-left: 40px;
+}
+.label_select_box > ul > li:hover {
+    background: #f6f08a;
+}
+
+
+
+
+
+
+
+
+
+/* * * * * * * FOOTER * * * * * * */
+
+footer {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    bottom: 0;
+}
+
+footer > div {
+    width: 40px; height: 40px;
+    margin-top: 20px;
+    margin-left: 20px;
+    float: left;
+    background: url('img/check-box.png') no-repeat center / cover;
+}
+.img_btn {
+    margin-left: 15px;
+    background-image: url('img/picture.png');
+}
+.label_btn {
+    margin-left: 15px;
+    background-image: url('img/tag.png');
+}
+.stt_btn {
+    margin-left: 15px;
+    background-image: url('img/microphone.png');
+}
+.delete_btn {
+    margin-right: 20px;
+    float: right;
+    background-image: url('img/clear-button.png');
+}
