@@ -1,0 +1,68 @@
+#wrap {
+    width: 100%;
+    padding: 50px 0;
+    background: #EEEEEE;
+}
+
+h1 {
+    text-align: center;
+}
+
+div.container {
+    /* background: pink; */
+    padding: 0 20px;
+}
+
+.login_box {
+    width: 100%;
+    height: 500px;
+    /* background: lightgreen; */
+    margin-top: 50px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+input:checked + label {
+    background: white;
+}
+
+.login_or_signup {
+    width: 80px;
+    height: 40px; line-height: 40px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    float: left;
+    display: block;
+    box-shadow: 2px 0 2px 0 rgba(0,0,0, 0.5), -2px 0 2px 0 rgba(0,0,0,0.1);
+    background: linear-gradient(to bottom, #EEEEEE, rgb(211, 211, 211));
+    margin: 0;
+}
+
+.tab {
+    width: 100%;
+    clear: both;
+    height: 400px;
+    position: relative;
+    box-shadow: 1px 2px 2px 1px rgba(0,0,0, 0.3), -1px -1px 2px 0 rgba(0,0,0, 0.3);
+    border-radius: 0 5px 5px 5px;
+    background: white;
+}
+
+.tab > div {
+    width: 100%; height: 100%;
+    position: absolute;
+    display: none;
+}
+#r1:checked ~ .tab > #tab1 {
+    display: block;
+}
+#r2:checked ~ .tab > #tab2 {
+    display: block;
+}
+
+
+
+
+
+
