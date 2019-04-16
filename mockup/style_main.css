@@ -97,7 +97,11 @@ nav {
 }
 
 
+
+
 /* * * * * * * MENU * * * * * * */
+
+
 .menu_aside {
     width: calc(100% - 105px);
     height: calc(100vh - 45px);
