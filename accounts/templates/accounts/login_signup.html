@@ -1,0 +1,136 @@
+{% load bootstrap4 %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Todos</title>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background: #EEEEEE;
+        }
+
+        .main_title {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .outer_box {
+            width: 350px;
+            height: 650px;
+            margin: 0 auto;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input:checked + label {
+            background: white;
+        }
+
+        .login_or_signup {
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            float: left;
+            display: block;
+            box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.5), -2px 0 2px 0 rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to bottom, #EEEEEE, rgb(211, 211, 211));
+            margin: 0;
+        }
+
+        .login_or_signup:hover {
+            background: #EEEEEE;
+        }
+
+        input:checked + label:hover {
+            background: white;
+        }
+
+        .tab {
+            width: 100%;
+            clear: both;
+            height: 450px;
+            position: relative;
+            box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3), -1px -1px 2px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 0 5px 5px 5px;
+            background: white;
+        }
+
+        .tab > div {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            padding: 30px;
+            position: absolute;
+            display: none;
+        }
+
+        #r1:checked ~ .tab > #tab1 {
+            display: block;
+        }
+
+        #r2:checked ~ .tab > #tab2 {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="wrap">
+    <h1 class="main_title">Service Name</h1>
+    <div class="outer_box">
+        <input type="radio" name="rd" id="r1" checked>
+        <label for="r1" class="login_or_signup">Log In</label>
+        <input type="radio" name="rd" id="r2">
+        <label for="r2" class="login_or_signup">Sign Up</label>
+
+        <div class="tab">
+            <div id="tab1">
+                <form method="POST" action="{% url 'accounts:login' %}">
+                    {% csrf_token %}
+                    {% bootstrap_form login_form %}
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+            </div>
+            <div id="tab2">
+                <form method="POST" action="{% url 'accounts:signup' %}">
+                    {% csrf_token %}
+                    {% bootstrap_form user_creation_form %}
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
