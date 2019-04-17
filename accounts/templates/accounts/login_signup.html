@@ -11,10 +11,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR" rel="stylesheet">
+
     <title>Todos</title>
     <style>
         ::-webkit-scrollbar {
             display: none;
+        }
+
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
         }
 
         body {
@@ -95,7 +102,7 @@
 <div id="wrap">
     <h1 class="main_title">Service Name</h1>
     <div class="outer_box">
-        <input type="radio" name="rd" id="r1" checked>
+        <input type="radio" name="rd" id="r1">
         <label for="r1" class="login_or_signup">Log In</label>
         <input type="radio" name="rd" id="r2">
         <label for="r2" class="login_or_signup">Sign Up</label>
@@ -132,5 +139,17 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+
+        $('#r1').prop("checked", true); // [default] 로그인 탭이 checked된 상태로 페이지가 로딩됨
+
+
+
+
+
+    });
+</script>
+
 </body>
 </html>
