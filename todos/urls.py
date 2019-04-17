@@ -5,4 +5,5 @@ app_name = 'todos'
 
 urlpatterns = [
     path('', views.list, name='list'),
+    path('create/', views.create, name='create'),
 ]
