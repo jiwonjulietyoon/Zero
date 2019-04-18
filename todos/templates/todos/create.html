@@ -1,2 +1,11 @@
-{{ card_model_form }}
-{{ label_model_form }}
+{% extends 'base.html' %}
+
+
+{% block body %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>{{ card_model_form }}</div>
+        <div>{{ label_model_form }}</div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
