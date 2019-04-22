@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Memos</h1>
+    {% for memo in memos %}
+        <div class="memo" style="background-color: #{{memo.label.color.code}}">
+            <h3>Title: {{memo.title}}</h3>
+            <p>Content: {{memo.content}}</p>
+            <p>Label: {{memo.label.name}}</p>
+            <p>bg-color: {{memo.label.color.code}}</p>
+            <div class="memo_delete"></div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>All Labels</h1>
+<ul>
+    {% for label in labels %}
+        <li><a href="{% url 'todos:edit_label' label.id %}">{{label.name}} ({{label.color.name}})</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
